@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: "Microsoft YaHei" ! important;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+body {
+	padding:10px;
+	background:#EBECED;
+}
+
+a {
+	text-decoration:none;
+}
+
+.userinfo {
+	height:64px;
+	background:#FFF;
+	border:1px solid #CCCCCC;
+	padding:7px 15px 7px 7px;
+	margin-bottom:3px;
+}
+
+.userinfo .userimg {
+	height:64px;
+	width:64px;
+	float:left;
+}
+
+.username {
+	float:left;
+	margin-left:10px;
+	margin-top:5px;
+	font-size:15px;
+	color:#7f7f7f;
+}
+
+.userinfo .usersex {
+	widht:15px;
+	height:15px;
+	margin-left:7px;
+	margin-top:7px;
+}
+
+.classinfo {
+	margin-left:10px;
+	margin-top:15px;
+	display:inline-block;
+	font-size:13px;
+	color:#7f7f7f;
+}
+
+.top {
+	display:block;
+	width:40px	;
+	height:20px;
+	margin-top:-34px;
+	margin-right:-15px;
+	background:#1586BE;
+	color:#FFF;
+	font-size:13px;
+	float:right;
+	text-align:center;
+	line-height:20px;
+}
+
+.count {
+	margin-left:10px;
+	margin-top:15px;
+	display:inline-block;
+	font-size:13px;
+	color:#7f7f7f;
+	float:right;
+}
+
+/*-----------------------------*/
+
+.leftDiv {
+	float:left;
+}
+
+.courseinfo {
+	height:70px;
+	background:#FFF;
+	border:1px solid #CCCCCC;
+	margin-bottom:3px;
+	line-height:45px;
+}
+
+.endTime {
+	color:#7f7f7f;
+	font-size:14px;
+	margin-top:-20px;
+	margin-left:15px;
+}
+
+.coursename {
+	margin-left:15px;
+	font-size:15px;
+	color:#000;
+}
+
+.rightbutton_over {
+	width:95px;
+	height:70px;
+	float:right;
+	background:#FF6547;
+	color:#FFF;
+	font-size:15px;
+	text-align:center;
+	line-height:70px;
+}
+
+.rightbutton_running {
+	width:95px;
+	height:70px;
+	float:right;
+	background:#00BC9B;
+	color:#FFF;
+	font-size:15px;
+	text-align:center;
+	line-height:70px;
+}
+
+.rightbutton_notstart {
+	width:95px;
+	height:70px;
+	float:right;
+	background:#999999;
+	color:#FFF;
+	font-size:15px;
+	text-align:center;
+	line-height:70px;
+}
+
+/*-----------------------------*/
+
+.coursetitle {
+	margin-bottom:10px;
+	font-size:15px;
+	color:#000;
+}
+
+.coursedesc {
+	margin-bottom:10px;
+	font-size:15px;
+	color:#7f7f7f;
+}
+
+.courselistinfo {
+	padding:10px;
+	background:#FFF;
+	border:1px solid #CCCCCC;
+	font-size:13px;
+	color:#7f7f7f;
+}
+
+.testbutton {
+	display:block;
+	height:42px;
+	margin-top:10px;
+	background:#FF6547;
+	text-align:center;
+	line-height:42px;
+	font-size:15px;
+	color:#FFF;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/index_register.css' %}" rel="stylesheet">
+	
+	<title>申请成为认证学员</title>
+</head>
+
+<script>
+$('html').ajaxSend(function(event, xhr, settings) {  
+    function getCookie(name) {  
+        var cookieValue = null;  
+        if (document.cookie && document.cookie != '') {  
+            var cookies = document.cookie.split(';');  
+            for (var i = 0; i < cookies.length; i++) {  
+                var cookie = jQuery.trim(cookies[i]);  
+                // Does this cookie string begin with the name we want?  
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {  
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));  
+                    break;  
+                }  
+            }  
+        }  
+        return cookieValue;  
+    }  
+    if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {  
+        // Only send the token to relative URLs i.e. locally.  
+        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));  
+    }  
+});
+</script>
+
+<script  type="text/javascript">
+	$(document).ready(function()
+	{		
+		$(".textnow input:first").addClass("textinput");
+		$(".teoption select:first").addClass("teopt");
+		
+		$("#zhyselect").change(function(e) {
+			var academyId = $(this).val()
+			$.getJSON('/ajaxGetClassInfo/?academyId=' + academyId,function(ret){
+				$('#zhyselecttw').empty()
+				for(var key in ret){
+					$('#zhyselecttw').append('<option value="'+ key +'">'+ ret[key] +'</option>')
+				}
+				
+			})
+	    });
+		
+		$("#buttonshow").click(function(){		
+			var post_classInfo = $("#zhyselecttw").val()
+			var post_username = $("#username").val()
+			var post_usertel = $("#usertel").val()
+			var post_unionid = $("#unionid").val()
+			var post_openid = $("#openid").val()
+			var post_nickname = $("#nickname").val()
+			var post_sex = $("#sex").val()
+			var post_country = $("#country").val()
+			var post_province = $("#province").val()
+			var post_city = $("#city").val()
+			var post_language = $("#language").val()
+			var post_headimgurl = $("#headimgurl").val()
+			// 提交数据
+			$.post('/userPost/', 
+			{ 
+				classInfo : post_classInfo,
+				username : post_username,
+				usertel : post_usertel,
+				unionid : post_unionid,
+				openid : post_openid,
+				nickname : post_nickname,
+				sex : post_sex,
+				country : post_country,
+				province : post_province,
+				city : post_city,
+				language : post_language,
+				headimgurl : post_headimgurl
+			}, 
+			function (text, status) {
+				$(location).attr('href', text);
+			});
+		});
+	});
+	
+</script>
+
+
+<body>
+
+<div class="backgd">
+	<div class="top">
+        <span id="topLogin">申请成为认证学员</span>
+	</div>
+	<!--div>
+   		<a href="{% url 'user_info' %}"><img src="{% static 'images/toHome.png' %}" id="imgTohome" alt="toHome" ></a>
+	</div-->
+	<!--form name="userPost" action="/userPost/" method="post"-->
+	{% csrf_token %}
+	<div class="show">
+		<div class="imagehead">
+			<img src="{{ headimgurl }}" id="showimg">
+		</div>
+		<div class="teoption">
+			<select id="zhyselect" name="academyInfo">
+				{% if academyInfoList %}
+					{% for academy in academyInfoList %}
+						<option value="{{ academy.id }}">{{ academy.academyName }}</option>
+					{% endfor %}
+				{% endif %}
+			</select>
+			
+			<select id="zhyselecttw" name="classInfo">
+				{% if classInfo %}
+					{% for class in classInfo %}
+						<option value="{{ class.id }}">{{ class.className }}</option>
+					{% endfor %}
+				{% endif %}
+			</select>
+		</div>
+		<div class="textnow">
+			<input id="username" type="text" onFocus="this.value = ''" value="请输入真实姓名" name="username">
+			<input id="usertel" type="text" onFocus="this.value = ''" value="请输入手机号码" name="usertel">
+			<input id="unionid" type="hidden" value="{{ unionid }}" name="unionid">
+			<input id="openid" type="hidden" value="{{ openid }}" name="openid">
+			<input id="nickname" type="hidden" value="{{ nickname }}" name="nickname">
+			<input id="sex" type="hidden" value="{{ sex }}" name="sex">
+			<input id="country" type="hidden" value="{{ country }}" name="country">
+			<input id="province" type="hidden" value="{{ province }}" name="province">
+			<input id="city" type="hidden" value="{{ city }}" name="city">
+			<input id="language" type="hidden" value="{{ language }}" name="language">
+			<input id="headimgurl" type="hidden" value="{{ headimgurl }}" name="headimgurl">
+		</div>
+		<div class="buttonshow">
+			<input id="buttonshow" class="buttonshow" type="button" value="申请成为认证学员" />
+		</div>
+	</div>
+	<!--/form-->
+</div>
+</body>
+</html>

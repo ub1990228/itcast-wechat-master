@@ -1,0 +1,29 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<link href="{% static 'css/style.by.mycode.css' %}" rel="stylesheet">
+
+<title>阶段课程信息</title>
+</head>
+
+<body>
+
+<h1 class="coursetitle">{{ topicInfo.lessonName }}</h1>
+<!--h2 class="coursedesc">预计2015年9月10日节课</h2-->
+
+<div class="courselistinfo">
+	<pre>{{ topicInfo.lessonContent }}</pre>
+</div>
+	
+	<a href="/topicTest/?topicId={{ topicInfo.id }}"><span class="testbutton">查看该阶段测试题</span></a>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!--script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script-->
+<!--script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script-->
+
+<link href="{% static 'css/style.by.mycode.css' %}" rel="stylesheet">
+
+<title>课程列表和阶段测试</title>
+</head>
+
+<body>
+
+{% if courseList %}
+	{% for course in courseList %}
+		<div class="courseinfo">
+			<div class="leftDiv">
+				<a href="/topic/?topicId={{ course.id }}" class="divButton">
+					<span class="coursename">{{ course.lessonName }}</span>
+				</a>
+				<p class="endTime">预计结课时间:{{ course.endTime }}</p>
+			</div>
+				{% if course.grade == None %}
+					{% if classTime > course.timeOut %}
+						<a href="/topicTest/?topicId={{ course.id }}"><span class="rightbutton_running">开始测试</span></a>
+					{% else %}
+						<span class="rightbutton_notstart">时间未到</span>
+					{% endif %}
+				{% else %}
+					<span class="rightbutton_over">得分:{{ course.grade }}</span>
+				{% endif %}
+			
+		</div>
+	{% endfor %}
+{% endif %}
+
+</body>
+</html>

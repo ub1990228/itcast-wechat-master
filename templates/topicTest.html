@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <title>{{ syllName }}</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">  
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+ 
+  <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/quiz.js' %}"></script>
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<style>
+
+body{
+	background-color: #eee;
+}
+.top{
+	height: 10px;
+    width: 100%;
+	background-color: #eee;
+//	border-bottom: 1px solid #ddd;
+    text-align: center;
+    positon:relative;
+}
+#imgTohome{
+  height: auto;
+  position: absolute;
+  top: 0; left: 0;
+  //float: left;
+    width:60px;
+    padding: 20px 20px;
+    align:left;
+}
+
+#topLogin{
+    margin: auto;
+    //position: absolute;
+    font-size:20px;
+    line-height: 150%;
+    top: 0; left: 0; bottom: 0; right: 0;
+    font-weight:bold;
+    color: #787878;
+    display:none;
+    //overflow: hidden;
+}
+#stage
+{
+display:none;
+}
+.hide
+{
+display:none;
+}
+</style>
+
+<body >
+
+{% for que in questions %}
+{% endfor %}
+<div class="top">
+        <span id="topLogin "></span>
+</div>
+<div class="hide">
+   <a href="indexone.html"><img src="../static/images/toHome.png" id="imgTohome" alt="toHome" ></a>
+</div>
+
+<div id="main">
+	<div class="demo">
+		<div id='quiz-container'></div>
+	</div>
+</div>
+<pre id='stage'>{{ topicId }}</pre>
+<script>
+/*var init={'questions':[{'question':'jQuery是什么？','answers':['JavaScript库','CSS库','PHP框架','以上都不是'],'correctAnswer':1},{'question':'找出不同类的一项?','answers':['写字台','沙发','电视','桌布'],'correctAnswer':3},{'question':'国土面积最大的国家是：','answers':['美国','中国','俄罗斯','加拿大'],'correctAnswer':3},{'question':'月亮距离地球多远？','answers':['18万公里','38万公里','100万公里','180万公里'],'correctAnswer':2}]};*/
+//alert('111')
+//debugger;
+//console.log(init);
+//var topicId = {{ topicId }};
+//alert(topicId);
+$(function(){
+	var topicId = {{ topicId }};
+/*
+	$(function(){
+	  $('#quiz-container').jquizzy({
+		  questions: init.questions,
+//		  sendResultsURL: "{% url 'get_answer' %}"
+	  });
+	});*/
+  $.getJSON('/quiz_choice/',{'topicId':topicId},function(ret){
+        //返回值 ret 在这里是一个字典
+        var init=ret
+        $(function(){
+          $('#quiz-container').jquizzy({
+              questions: init.questions,
+              sendResultsURL: "{% url 'get_answer' %}"
+          });
+        });
+	})
+
+});
+
+
+</script>
+</body>
+</html>

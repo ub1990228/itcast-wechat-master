@@ -1,0 +1,46 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<link href="{% static 'css/style.by.mycode.css' %}" rel="stylesheet">
+
+<title>同学列表</title>
+</head>
+
+<body>
+{% if stuList %}
+	{% for stu in stuList %}
+	<div class="userinfo">
+		<img class="userimg" src="{{ stu.photoAddr }}" />
+		<span class="username">{{ stu.nickName }}</span>
+		{% if stu.stuSex == 1 %}
+			<img class="usersex" src="{% static 'images/u39.png' %}" />
+		{% else %}
+			<img class="usersex" src="{% static 'images/u43.png' %}" />
+		{% endif %}
+		<br />
+		<!--span class="classinfo">{{ stu.createTime }}</span-->
+		<span class="classinfo">{{ stu.country }}-{{ stu.province }}-{{ stu.city }}</span>
+		{% if stu.allCount == None %}
+			<!--span class="count">总分：0</span-->
+		{% else %}
+			{% if forloop.counter <= 2 %}
+				<span class="top">学霸</span>
+				<span class="count">总分：{{ stu.allCount }}</span>
+			{% else %}
+				<!--span class="count">总分：{{ stu.allCount }}</span-->
+			{% endif %}
+		{% endif %}
+	</div>
+	{% endfor %}
+{% endif %}
+
+</body>
+</html>

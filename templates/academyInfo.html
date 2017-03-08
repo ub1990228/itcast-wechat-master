@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>学院介绍</title>
+  
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/cppschool.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<div>
+	<div class="top">
+		<div class="topLogin">
+			<p>{{ academyInfo.academyName }} 学院</p>
+			
+		</div>
+		<div class="imgTohome">
+			<a href="{% url 'user_info' %}"><img src="{% static 'images/toHome.png' %}" style="width:20px"></a>
+		</div>
+	</div>
+
+	<div>
+		<img src="/media/{{ academyInfo.academyImage }}" alt="academyImg" class="imgMsg">
+	</div>
+
+	<div  class="Msg">
+		<p id="cppmsg"  readonly="readonly">
+			{{ academyInfo.academyIntro }}
+		</p>
+	</div>
+
+
+	<div class="show">
+	<ul class="list-group" id="list-g2">
+		<li class="lis">
+			<img class="xyjs_s" src="{% static 'images/u15.png' %}">
+
+			<a href="/baseTest/{{ academyInfo.slug }}"><span class="leftbutton_running">{{ academyInfo.academyName }} 学科入学测试题</span></a>
+			
+			<img class="xyjs_b" src="{% static 'images/u14.png' %}">
+		</li>
+	</ul>
+	</div>
+</div>
+
+</body>
+</html>

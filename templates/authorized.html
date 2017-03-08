@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/index_register.css' %}" rel="stylesheet">
+	
+	<title>我的传智历程</title>
+</head>
+
+<body>
+
+<div class="backgds">
+	<div class="tops">
+		<div id="imgsals" >
+			<a href=""><img src="{% static 'images/toHome.png' %}" style="width:20px"></a>
+		</div>
+
+		<div id="imgsalps">
+			<p>我的资料</p>
+		</div>
+	</div>
+
+	<div class="largs">
+
+		<div class="page-headers">
+			<div>
+				<div>
+					<img class="imgffs" src="{{ imageUrl }}">
+				</div>
+				<div class="titexts">
+					<span class="nickName">{{ userName }}</span>
+					<div class="Informations">
+						<p class="Informations">{{ inClass }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shows">
+			<ul class="list-groups">
+				<div class="nones">
+				<a href="/student/{{ inClass.id }}">
+					<li class="liss">
+						<img class="xyjs_ss" src="{% static 'images/u19.png' %}">
+							我的同班同学
+						<img class="xyjs_bss" src="{% static 'images/u14.png' %}">
+					</li>
+				</a>
+				<a href="/courseList/{{ inClass.academyID.slug }}/?userId={{ userId }}">
+				<li class="liss">
+					<img class="xyjs_ss" src="{% static 'images/u28.png' %}">
+						课程计划与阶段测试
+					<img class="xyjs_bss" src="{% static 'images/u14.png' %}">
+				</li>
+				</a>
+				<a href="/topic">
+				<li class="liss">
+					<img class="xyjs_ss" src="{% static 'images/u37.png' %}">
+						常见笔试面试题目
+					<img class="xyjs_bss" src="{% static 'images/u14.png' %}">
+				</li>
+				</a>
+				<a href="/help">
+				<li class="liss">
+					<img class="xyjs_ss" src="{% static 'images/u46.png' %}">
+						提个建议
+					<img class="xyjs_bss" src="{% static 'images/u14.png' %}">
+				</li>
+				</a>
+				<a href="http://www.itcast.cn/">
+				<li class="liss">
+					<img class="xyjs_ss" src="{% static 'images/u17.png' %}">
+						关于传智播客
+					<img class="xyjs_bss" src="{% static 'images/u14.png' %}">
+				</li>
+				</a>
+				</div>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

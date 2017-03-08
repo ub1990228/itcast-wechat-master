@@ -1,0 +1,396 @@
+html
+{
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    width: 100%;
+}
+body
+{
+	background-color: #EBECED;
+}
+
+a {
+	text-decoration:none;
+	border: 0;
+}
+
+a:hover {
+	text-decoration:none;
+	border: 0;
+}
+
+ul
+{
+	list-style: none;
+}
+
+.page-header
+{
+	text-align: center;
+	margin-bottom: 100px;
+	margin-top: 60px;
+	padding: 0px;
+	border: 0px;
+}
+.page-header p
+{
+	font-weight:bold;
+
+}
+
+.top
+{
+	display:none;
+	height: 60px;
+	background-color: #F4F4F4;
+	border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+#imgTohome{
+  	height: auto;
+  	position: absolute;
+  	top: 0; left: 0;
+    width:60px;
+    padding: 20px 20px;
+ 
+}
+
+
+.top div
+{
+	float: left;
+
+}
+#topLogin{
+    margin: auto;
+    //position: absolute;
+    font-size:20px;
+    line-height: 300%;
+    top: 0; left: 0; bottom: 0; right: 0;
+    font-weight:bold;
+    color: #787878;
+}
+
+#imgsal
+{
+	width: 60px;
+	height: 60px;
+	padding: 20px;
+	text-align: center;
+}
+#imgsalp
+{
+	line-height: 60px;
+	margin: 0px;
+	height: 40px;
+	width: 40px;
+	font-weight:bold;
+	margin-left: 29%;
+}
+
+#imgsalp p
+{
+	margin: 0px;
+	font-size: 17px;
+	color: #787878;
+
+	
+}
+.list-group
+{
+	margin-bottom: 10px;
+}
+.list-group li
+{
+	margin-left: 16px;
+	width:91%;
+	font-size: 16px;
+}
+.lis
+{
+
+	position:relative;
+	display:block;
+	padding:20px 25px;
+	margin-bottom:-1px;
+	background-color:#fff;
+	border:1px solid #ddd;
+	height: 60px;
+	color: #828282;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+}
+
+.xyjs_b
+{
+	float: right;
+}
+.xyjs_bs
+{
+	background-color: #EBECED;
+}
+.xyjs_c
+{
+	float: right;
+}
+#textcw
+{
+	font-size: 20px;
+	color: #1F68A9;
+	text-decoration: underline;
+	margin: 0px;
+	/*border-bottom: 1px solid #434343;*/
+}
+
+
+#textgz
+{
+	font-size: 15px;
+	color: #B79884;
+}
+
+.xyjs_s
+{
+	margin-right: 10px;
+}
+
+#list-g2
+{
+	margin-bottom: 0px;
+}
+.none li
+{
+	margin-left: 18px;
+	padding: 12px 65px;
+	height: 44px;
+	border: 0px;
+	width:90%;
+	font-size: 14px;
+
+}
+
+.teoption select
+{
+	width: 145px;
+	height: 42px;
+	font-size: 16px;
+	color: #787878;
+	border: 1px solid #959595;
+}
+.teopt /*这是需要添加的css*/
+{
+	margin-right: 5px;
+}
+.textnow input
+{
+	width: 300px;
+	height: 42px;
+	text-align: center;
+	font-size: 16px;
+	color: #787878;
+	border: 1px solid #959595;
+}
+
+#showimg
+{
+	width: 95px;
+	height: 95px;
+}
+
+.imagehead
+{
+	margin: 40px 60px;
+	text-align: center;
+	margin-top: 80px;
+}
+.imagehead img
+{
+	border: 2px solid #fff;
+}
+.teoption
+{
+	margin: 15px 10px;
+	text-align: center;
+}
+.textnow
+{
+	text-align: center;
+	margin: 15px 20px;
+}
+.textinput  /* jquery加入的css*/
+{
+	margin-bottom: 10px;
+
+}
+.buttonshow
+{
+	margin: 10px 30px;
+	text-align: center;
+}
+.buttonshow input
+{
+	margin: 0;
+	width: 300px;
+	height: 42px;
+	background-color: #009CD8;
+	color: #ffffff;
+	border-style: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 16px;
+	font-style: normal;
+}
+.buttonshow a
+{
+	color: #ffffff;
+}
+
+.page-headers
+{
+	margin:18px 18px;
+	height: 96px;
+	padding: 0px;
+	border: 0px;
+}
+.page-headers div
+{
+	float: left;
+}
+
+.tops
+{
+	display: none;
+	height: 60px;
+	background-color: #F4F4F4;
+	border-bottom: 1px solid #ddd;
+}
+
+.tops div
+{
+	float: left;
+}
+
+#imgsals
+{
+	width: 60px;
+	height: 60px;
+	padding: 20px;
+	text-align: center;
+	padding-top: 18px;
+}
+#imgsalps
+{
+	line-height: 60px;
+	margin: 0px;
+	height: 40px;
+	width:80px;
+	font-weight:bold;
+	margin-left: 25%;
+}
+
+#imgsalps p
+{
+	margin: 0px;
+	font-size: 17px;
+	color: #787878;
+
+	
+}
+.list-groups
+{
+	margin-bottom: 0px;
+	padding-left: 0px;
+}
+
+.list-groups li
+{
+	margin-left: 16px;
+	width:91%;
+	font-size: 16px;
+}
+.liss
+{
+	position:relative;
+	display:block;
+	padding:20px 25px;
+	margin-bottom:-1px;
+	background-color:#fff;
+	border:1px solid #ddd;
+	height: 59px;
+	color: #828282;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.liss:hover {
+	background:#FBFBFB;
+}
+
+.xyjs_bss
+{
+	float: right;
+}
+#textcws
+{
+	font-size: 30px;
+	color: #1F68A9;
+	text-decoration: underline;
+	margin: 0px;
+}
+#textgzs
+{
+	font-size: 15px;
+	color: #B79884;
+}
+
+.xyjs_ss
+{
+	margin-right: 10px;
+}
+.imgffs
+{
+	width:96px;
+	height:96px;
+	border:4px solid #ffffff;
+}
+.titexts
+{
+	position: absolute;
+	z-index: 2;
+	margin: -20px 113px;
+	height: 151px;
+	width: 200px;
+	font-size: 16px;
+	color: #787878;
+}
+.nickName {
+	display:block;
+	font-size:18px;
+	color:#222;
+	margin-top: 40px;
+}
+
+.Informations p
+{
+	margin-top: 5px;
+	float: left;
+	font-size: 16px;
+}
+
+#scendps
+{
+	margin-left: 10px;
+}
+
+#zhyselect
+{
+	
+}

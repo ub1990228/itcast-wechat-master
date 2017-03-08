@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	
+	<title>欢迎加入传智播客</title>
+</head>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#showList").click(function(){
+			$(".none").slideToggle(200);
+		});
+	});
+</script>
+
+<body>
+
+<div class="backgd">
+	<div class="top">
+		<div id="imgsal" >
+			<a href="{% url 'user_info' %}"><img src="{% static 'images/toHome.png' %}" alt = "toHome" style="width:20px"/></a>
+		</div>
+
+		<div id="imgsalp">
+			<p>登录</p>
+		</div>
+	</div>
+	
+	<div class="larg">
+
+		<div class="page-header">
+			<p id="textcw"><a href="{{ showUrl }}">{{ showText }}</a></p>
+			<p id="textgz">关注自己的学习动态</p>
+		</div>
+		<div class="show">
+			<ul class="list-group">
+				<li class="lis" id="showList">
+					<img class="xyjs_s" src="{% static 'images/u10.png' %}">
+						学院介绍 
+					<img class="xyjs_b" src="{% static 'images/u14.png' %}"> 
+				</li>
+				<div class="none">
+				{% if AcademyInfoList %}
+					{% for academy in AcademyInfoList %}
+						<li class="lis" id="lis"><a href="/academyInfo/{{ academy.slug }}">{{ academy.academyName }}</a></li>
+					{% endfor %}
+				{% endif %}
+				</div>
+			</ul>
+			<ul class="list-group" id="list-g2">
+				<a href="http://www.itcast.cn">
+					<li class="lis">
+						<img class="xyjs_s" src="{% static 'images/u17.png' %}">
+							关于传智博客
+						<img class="xyjs_b" src="{% static 'images/u14.png' %}">
+					</li>
+				</a>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
